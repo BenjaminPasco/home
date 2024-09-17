@@ -32,7 +32,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - letsencrypt:/letsencrypt
 
-  app:
+  home:
     image: bpasco/production:home
     platform: linux/amd64
     labels:
