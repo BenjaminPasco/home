@@ -26,6 +26,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    networks:
+      - traefik-net
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - letsencrypt:/letsencrypt
@@ -42,6 +44,7 @@ services:
       - "traefik.http.routers.app.rule=HOST(`benpas.eu`)"
       - "traefik.http.routers.app.entrypoints=websecure"
       - "traefik.http.routers.app.tls.certresolver=myresolver"
+      - "traefik.http.services.app.loadbalancer.server.port=8000"
       - "com.centurylinklabs.watchtower.enable=true"
     environment:
       - HOST=true
@@ -50,6 +53,12 @@ services:
     deploy:
       mode: replicated
       replicas: 2
+    networks:
+      - traefik-net
+
+networks:
+  traefik-net:
+    driver: bridge
 
 volumes:
   letsencrypt:
