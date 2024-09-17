@@ -20,6 +20,8 @@ jobs:
       with:
         node-version: '20'
     - name: Install dependencies
-      run: pnpm install
+      run: |
+        npm install -g pnpm
+        pnpm install
     - name: Build project
       run: pnpm run build
