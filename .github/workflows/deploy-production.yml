@@ -6,7 +6,7 @@ on:
       - production
 
 jobs:
-  build:
+  update-image:
     runs-on: ubuntu-latest
 
     steps:
