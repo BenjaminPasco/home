@@ -8,8 +8,8 @@ installGlobals();
 sourceMapSupport.install();
 const app = fastify({
 	logger: {
-		level: process.env.NODE_ENV ? "info" : "error"
-	}
+		level: process.env.NODE_ENV ? "info" : "error",
+	},
 });
 await app.register(remixFastify);
 const host = process.env.HOST === "true" ? "0.0.0.0" : "127.0.0.1";

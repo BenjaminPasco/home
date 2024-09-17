@@ -1,5 +1,5 @@
-import { test, expect } from "vitest";
 import { act, renderHook } from "@testing-library/react";
+import { expect, test } from "vitest";
 import useTest from "./useTest";
 
 test("updating useTest hook value", () => {
