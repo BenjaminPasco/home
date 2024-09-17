@@ -33,18 +33,14 @@ services:
       - letsencrypt:/letsencrypt
 
   app:
-    # container_name: app
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
-    image: bpasco/production:app
+    image: bpasco/production:home
     platform: linux/amd64
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.app.rule=HOST(`benpas.eu`)"
-      - "traefik.http.routers.app.entrypoints=websecure"
-      - "traefik.http.routers.app.tls.certresolver=myresolver"
-      - "traefik.http.services.app.loadbalancer.server.port=8000"
+      - "traefik.http.routers.home.rule=HOST(`benpas.eu`)"
+      - "traefik.http.routers.home.entrypoints=websecure"
+      - "traefik.http.routers.home.tls.certresolver=myresolver"
+      - "traefik.http.services.home.loadbalancer.server.port=8000"
       - "com.centurylinklabs.watchtower.enable=true"
     environment:
       - HOST=true
