@@ -35,6 +35,7 @@ services:
     #   context: .
     #   dockerfile: Dockerfile
     image: bpasco/production:app
+    platform: linux/amd64
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.app.rule=HOST(`benpas.eu`)"
