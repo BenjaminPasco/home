@@ -43,8 +43,6 @@ services:
       - "traefik.http.routers.app.entrypoints=websecure"
       - "traefik.http.routers.app.tls.certresolver=myresolver"
       - "com.centurylinklabs.watchtower.enable=true"
-    ports: 
-      - "8000:8000"
     environment:
       - HOST=true
       - NODE_ENV=production
