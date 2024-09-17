@@ -2,8 +2,8 @@ name: Deploy new tag to production by updating docker image
 
 on:
   push:
-    branches:
-      - production
+    tags:
+      - 'v*.*.*'
 
 jobs:
   update-image:
