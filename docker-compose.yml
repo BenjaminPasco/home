@@ -7,6 +7,7 @@ services:
     - "--label-enable"
     - "--interval"
     - "30"
+    - "--rolling-restart"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
@@ -48,9 +49,9 @@ services:
       - HOST=true
       - NODE_ENV=production
       - PORT=8000
-    # deploy:
-    #   mode: replicated
-    #   replicas: 3
+    deploy:
+      mode: replicated
+      replicas: 2
 
 volumes:
   letsencrypt:
