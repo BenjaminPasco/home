@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - production
+    paths-ignore:
+      - docker-compose.yml
 
 jobs:
   semantic-versioning:
