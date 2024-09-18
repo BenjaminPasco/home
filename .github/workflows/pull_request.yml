@@ -1,8 +1,9 @@
-name: Perform check before merging to staging
+name: Perform check on pull request
 
 on:
   pull_request:
     branches:
+      - production
       - staging
 
 jobs:
