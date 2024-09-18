@@ -16,9 +16,9 @@ services:
       - HOST=true
       - NODE_ENV=production
       - PORT=8000
-    deploy:
-      mode: replicated
-      replicas: 2
+    # deploy:
+    #   mode: replicated
+    #   replicas: 2
     networks:
       - traefik-net
 
