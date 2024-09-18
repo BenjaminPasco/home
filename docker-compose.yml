@@ -25,6 +25,7 @@ services:
 networks:
   traefik-net:
     driver: bridge
+    external: true
 
 volumes:
   letsencrypt:
