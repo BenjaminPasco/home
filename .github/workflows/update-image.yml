@@ -9,7 +9,7 @@ on:
       - production
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -25,6 +25,8 @@ jobs:
       run: |
         npm install -g pnpm
         pnpm install
+    - name: Check
+      run: pnpm run check
     - name: Build project
       run: pnpm run build
     - name: Semantic release
