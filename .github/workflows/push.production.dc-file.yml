@@ -23,5 +23,5 @@ jobs:
           ssh-keyscan -H ${{ secrets.PRODUCTION_HOST }} >> ~/.ssh/known_hosts
           ssh ${{ secrets.PRODUCTION_USERNAME }}@${{ secrets.PRODUCTION_HOST }} "mkdir -p ~/home"
           scp -o StrictHostKeyChecking=no docker-compose.yml ${{ secrets.PRODUCTION_USERNAME }}@${{ secrets.PRODUCTION_HOST }}:~/home/docker-compose.yml
-          ssh ${{ secrets.PRODUCTION_USERNAME }}@${{ secrets.PRODUCTION_HOST }} "cd ~/reverse-proxy && docker compose down"
-          ssh ${{ secrets.PRODUCTION_USERNAME }}@${{ secrets.PRODUCTION_HOST }} "cd ~/reverse-proxy && docker compose up -d"
+          ssh ${{ secrets.PRODUCTION_USERNAME }}@${{ secrets.PRODUCTION_HOST }} "cd ~/home && docker compose down"
+          ssh ${{ secrets.PRODUCTION_USERNAME }}@${{ secrets.PRODUCTION_HOST }} "cd ~/home && docker compose up -d"
