@@ -9,7 +9,7 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<h1>Hello world test ci semantic</h1>
+				<h1>Test split docker compose production setup</h1>
 				<Outlet />
 				<Scripts />
 			</body>
